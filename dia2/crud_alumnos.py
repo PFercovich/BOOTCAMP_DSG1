@@ -25,7 +25,7 @@ while(opcion < 5):
         [5] SALIR
         """)
   print("="*ANCHO)
-  
+
   opcion = int(input("INGRESE OPCION: "))
   os.system("clear")
   #print(f"selecciono opción {opcion}")
@@ -72,9 +72,9 @@ while(opcion < 5):
       nuevo_email = input("EMAIL: ")
       nuevo_celular = input("CELULAR: ")
       dic_actualizar_alumno = {
-        'nombre',nuevo_nombre,
-        'email',nuevo_email,
-        'celular',nuevo_celular
+        'nombre':nuevo_nombre,
+        'email':nuevo_email,
+        'celular':nuevo_celular
       }
       lista_alumnos[posicion_busqueda] = dic_actualizar_alumno
     print("ALUMNO ACTUALIZADO CON ÉXITO...")
@@ -103,3 +103,4 @@ while(opcion < 5):
     print("="*ANCHO)
     print(" "*10 + "OPCIÓN INVÁLIDA")
     print("="*ANCHO)
+  time.sleep(1)
