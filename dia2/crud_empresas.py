@@ -75,7 +75,7 @@ while(opcion < 5):
         'direccion':nueva_direccion
       }
       lista_empresas[posicion_busqueda] = dic_actualizar_empresa
-    print("EMPRESA ACTUALIZADA CON ÉXITO...")
+      print("EMPRESA ACTUALIZADA CON ÉXITO...")
 
   elif(opcion == 4):
     print("="*ANCHO)
