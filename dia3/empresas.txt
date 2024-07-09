@@ -1,2 +1,3 @@
 123456,Las Vinas,Av. Vinedo #123
-45667,Pinturas,Av Consturctores 34
+45667,Las Pinturas,Av Constructores #469
+159357,Los albañiles,Av. Larco #379
