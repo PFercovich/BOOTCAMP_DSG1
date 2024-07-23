@@ -13,9 +13,11 @@ class AlumnoTk:
     self.db = mysql.connector.connect(
       host='localhost',
       user='root',
-
-
+      password='root',
+      database='db_codigo'
     )
+
+    self.cursor = self.db.cursor()
 
     frame = LabelFrame(self.app,text='Nuevo Alumno')
     frame.grid(row=0,column=0,columnspan=2,pady=10,padx=10)
@@ -35,6 +37,9 @@ class AlumnoTk:
     self.txt_celular = Entry(frame)
     self.txt_celular.grid(row=3,column=1)
 
+    btn_insertar = Button(frame,text='Insertar Alumno',command=self.insertar)
+    btn_insertar.grid(row=4,column=1,columnspan=2)
+
     #grilla de alumnos
     self.tree = Treeview(self.app)
     self.tree['columns'] = ('Nombre','Email','Celular')
@@ -45,12 +50,12 @@ class AlumnoTk:
     self.tree.column('Celular')
 
     self.tree.heading('#0',text='id')
-    self.tree.heading('Nombre')
-    self.tree.heading('Email')
-    self.tree.heading('Celular')
+    self.tree.heading('Nombre',text='Nombre')
+    self.tree.heading('Email',text='Email')
+    self.tree.heading('Celular',text='Celular')
 
-  def insertar(self):
-    pass
+    self.tree.grid(row=5,column=0,padx=20,pady=20)
+    self.cargar_alumnos()
 
   def cargar_alumnos(self):
     #limpiar el treeview
@@ -60,9 +65,10 @@ class AlumnoTk:
     #cargar alumnos
     self.cursor.execute("select id,nombre,email,celular from tbl_alumno")
     for row in self.cursor.fetchall():
-      self.tree.insert('',END,iid=row[0],values=row[1:])
+      self.tree.insert('',END,id=row[0],values=row[1:])
 
-  def inseertar(self):
+  def insertar(self):
+    #pass
     nuevo_alumno = (
       self.txt_nombre.get(),
       self.txt_email.get(),
