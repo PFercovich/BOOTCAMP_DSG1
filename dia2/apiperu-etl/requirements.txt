@@ -1,4 +1,4 @@
-prefect
 requests
-bs4
+python-decouple
+prefect
 mysql-connector-python
